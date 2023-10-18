@@ -3,6 +3,7 @@ module github.com/switfs/oms
 go 1.20
 
 require (
+	github.com/BurntSushi/toml v1.3.2
 	github.com/ipfs/go-log/v2 v2.5.1
 	github.com/urfave/cli/v2 v2.25.7
 )
