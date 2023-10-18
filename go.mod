@@ -1,4 +1,4 @@
-module github.com/tddey01/oms
+module github.com/switfs/oms
 
 go 1.20
 
