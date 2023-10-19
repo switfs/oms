@@ -19,10 +19,17 @@ type Server struct {
 }
 
 type Mysql struct {
-	Hosts  string `json:"hosts"`
-	Users  string `json:"users"`
-	Passwd string `json:"passwd"`
-	DbName string `json:"dbName"`
+	DbType       string `json:"dbtype"`
+	Hosts        string `json:"hosts"`
+	Ports        string
+	Users        string `json:"users"`
+	Passwd       string `json:"passwd"`
+	DbName       string `json:"dbName"`
+	MaxIdleConns int
+	MaxOpenConns int
+	Engine       string
+	Local        string
+	GetSqlDebug  int 
 }
 
 type Redis struct {
