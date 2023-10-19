@@ -15,4 +15,9 @@ func init() {
 		return
 	}
 	utils.GVA_DB = utils.Gorm()
+	if utils.GVA_DB != nil {
+		utils.RegisterTables()
+		db, _ := utils.GVA_DB.DB()
+		defer db.Close()
+	}
 }
