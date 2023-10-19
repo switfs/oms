@@ -12,7 +12,7 @@ type ServerConfig struct {
 
 type Server struct {
 	Hosts    string `json:"hosts"`
-	Port     string `json:"port"`
+	Ports    string `json:"ports"`
 	Ssl      bool   `json:"ssl"`
 	CertFile string `json:"certFile"`
 	KeyFile  string `json:"keyFile"`
@@ -32,4 +32,10 @@ type Redis struct {
 }
 
 type ClientConfig struct {
+	Client Client `json:"client"`
+}
+
+type Client struct {
+	Hosts string `json:"hosts"`
+	Ports string `json:"ports"`
 }
