@@ -6,7 +6,6 @@ require (
 	github.com/BurntSushi/toml v1.3.2
 	github.com/go-sql-driver/mysql v1.7.1
 	github.com/ipfs/go-log/v2 v2.5.1
-	github.com/ipipdotnet/datx-go v0.0.0-20181123035258-af996d4701a0
 	github.com/urfave/cli/v2 v2.25.7
 	gorm.io/driver/mysql v1.5.2
 	gorm.io/gorm v1.25.5
