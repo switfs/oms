@@ -3,6 +3,7 @@ package config
 var (
 	SR ServerConfig
 	CR ClientConfig
+	PR ProxyConfig
 )
 
 type ServerConfig struct {
@@ -29,20 +30,11 @@ type Mysql struct {
 	MaxOpenConns int
 	Engine       string
 	Local        string
-	GetSqlDebug  int 
+	GetSqlDebug  int
 }
 
 type Redis struct {
 	Hosts  string `json:"hosts"`
 	Db     int    `json:"db"`
 	Passwd string `json:"passwd"`
-}
-
-type ClientConfig struct {
-	Client Client `json:"client"`
-}
-
-type Client struct {
-	Hosts string `json:"hosts"`
-	Ports string `json:"ports"`
 }

@@ -9,7 +9,7 @@ import (
 var log = logging.Logger("proxy")
 
 func init() {
-	if _, err := toml.DecodeFile("./config.toml", &config.CR); err != nil {
+	if _, err := toml.DecodeFile("./config.toml", &config.PR); err != nil {
 		log.Errorf("配置文件初始失败 %s", err.Error())
 		return
 	}
