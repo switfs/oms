@@ -7,11 +7,10 @@ import (
 	"gorm.io/gorm"
 )
 
-func Gorm() *gorm.DB {
-	switch config.SR.Mysql.DbName {
-	default:
-		return GormMysql()
-	}
+var DB *gorm.DB
+
+func init() {
+	DB = GormMysql()
 }
 
 func GormMysql() *gorm.DB {
@@ -58,5 +57,5 @@ func GormMysqlByConfig(m config.Mysql) *gorm.DB {
 }
 
 func Dsn(m *config.Mysql) string {
-	return m.Users + ":" + m.Passwd + "@tcp(" + m.Hosts + ":" + m.Ports + ")/" + m.DbName + "?" + m.Local
+	return m.Users + ":" + m.Passwd + "@tcp(" + m.Hosts + ":" + m.Ports + ")/" + m.DbName + "?parseTime=true&loc=" + m.Local + "&charset=utf8mb4&collation=utf8mb4_unicode_ci&readTimeout=10s&writeTimeout=10s"
 }
