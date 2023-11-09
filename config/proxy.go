@@ -5,6 +5,7 @@ type ProxyConfig struct {
 }
 
 type Proxy struct {
-	Hosts string `json:"hosts"`
-	Ports string `json:"ports"`
+	Enabled bool   `json:"enabled"`
+	Hosts   string `json:"hosts"`
+	Ports   string `json:"ports"`
 }

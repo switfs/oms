@@ -12,6 +12,7 @@ type ServerConfig struct {
 }
 
 type Server struct {
+	Enabled  bool   `json:"enabled"`
 	Hosts    string `json:"hosts"`
 	Ports    string `json:"ports"`
 	Ssl      bool   `json:"ssl"`
@@ -20,21 +21,23 @@ type Server struct {
 }
 
 type Mysql struct {
+	Enabled      bool   `json:"enabled"`
 	DbType       string `json:"dbtype"`
 	Hosts        string `json:"hosts"`
 	Ports        string
 	Users        string `json:"users"`
 	Passwd       string `json:"passwd"`
 	DbName       string `json:"dbName"`
-	MaxIdleConns int
-	MaxOpenConns int
-	Engine       string
-	Local        string
-	GetSqlDebug  int
+	MaxIdleConns int    `json:"maxIdleConns"`
+	MaxOpenConns int    `json:"maxOpenConns"`
+	Engine       string `json:"engine"`
+	Local        string `json:"local"`
+	GetSqlDebug  int    `json:"debug"`
 }
 
 type Redis struct {
-	Hosts  string `json:"hosts"`
-	Db     int    `json:"db"`
-	Passwd string `json:"passwd"`
+	Enabled bool   `json:"enabled"`
+	Hosts   string `json:"hosts"`
+	Db      int    `json:"db"`
+	Passwd  string `json:"passwd"`
 }
