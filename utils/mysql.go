@@ -27,7 +27,7 @@ func GormMysql() *gorm.DB {
 	if db, err := gorm.Open(mysql.New(mysqlConfig), &gorm.Config{}); err != nil {
 		return nil
 	} else {
-		db.InstanceSet("gorm:table_options", "ENGINE="+m.Engine)
+		db.InstanceSet("gorm:table_options", "ENGINE=InnoDB")
 		sqlDB, _ := db.DB()
 		sqlDB.SetMaxIdleConns(m.MaxOpenConns)
 		sqlDB.SetMaxOpenConns(m.MaxOpenConns)
@@ -57,5 +57,5 @@ func GormMysqlByConfig(m config.Mysql) *gorm.DB {
 }
 
 func Dsn(m *config.Mysql) string {
-	return m.Users + ":" + m.Passwd + "@tcp(" + m.Hosts + ":" + m.Ports + ")/" + m.DbName + "?parseTime=true&loc=" + m.Local + "&charset=utf8mb4&collation=utf8mb4_unicode_ci&readTimeout=10s&writeTimeout=10s"
+	return m.Users + ":" + m.Passwd + "@tcp(" + m.Hosts + ":" + m.Ports + ")/" + m.DbName + "?parseTime=true&loc=Local&charset=utf8mb4&collation=utf8mb4_unicode_ci&readTimeout=10s&writeTimeout=10s"
 }

@@ -30,9 +30,6 @@ type Mysql struct {
 	DbName       string `json:"dbName"`
 	MaxIdleConns int    `json:"maxIdleConns"`
 	MaxOpenConns int    `json:"maxOpenConns"`
-	Engine       string `json:"engine"`
-	Local        string `json:"local"`
-	GetSqlDebug  int    `json:"debug"`
 }
 
 type Redis struct {
