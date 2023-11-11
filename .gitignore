@@ -94,4 +94,7 @@ fabric.properties
 .idea/vcs.xml
 .idea/modules.xml
 .idea/.gitignore
+.vscode/
+.vscode/settings.json
+
 
