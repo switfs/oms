@@ -7,6 +7,11 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
+func init() {
+
+}
+
+
 func main() {
 	_ = logging.SetLogLevel("*", "INFO")
 

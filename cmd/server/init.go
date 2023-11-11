@@ -14,7 +14,7 @@ func init() {
 		log.Errorf("配置文件初始失败 %s", err.Error())
 		return
 	}
-	utils.GVA_DB = utils.Gorm()
+	utils.Init()
 	if utils.GVA_DB != nil {
 		utils.RegisterTables()
 		db, _ := utils.GVA_DB.DB()

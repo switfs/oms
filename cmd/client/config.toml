@@ -1,0 +1,7 @@
+[client]
+hosts=127.0.0.1
+ports=1004
+[proxy]
+enabled=true
+hosts=127.0.0.1
+ports=1004

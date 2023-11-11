@@ -1,7 +1,8 @@
 package config
 
 type ProxyConfig struct {
-	Client Proxy `json:"proxy"`
+	Proxy Proxy `json:"proxy"`
+	Mysql Mysql `json:"mysql"`
 }
 
 type Proxy struct {
