@@ -23,6 +23,8 @@ var Run = &cli.Command{
 			defer db.Close()
 		}
 		log.Info("ok")
+
+		
 		return nil
 	},
 }
