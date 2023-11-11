@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/BurntSushi/toml"
 	"github.com/switfs/oms/config"
+	"github.com/switfs/oms/server"
 	"github.com/switfs/oms/utils"
 	"github.com/urfave/cli/v2"
 )
@@ -24,7 +25,11 @@ var Run = &cli.Command{
 		}
 		log.Info("ok")
 
-		
+		if err := server.RunNewServer(); err != nil {
+			log.Error("server run error on", err.Error())
+			panic(err)
+		}
+		log.Info("server run success ")
 		return nil
 	},
 }

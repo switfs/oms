@@ -8,7 +8,7 @@ import (
 	"github.com/switfs/oms/routers"
 )
 
-func RunNewServer() {
+func RunNewServer() error {
 	Router := routers.InitRouter()
 
 	srv := &http.Server{
@@ -26,4 +26,5 @@ func RunNewServer() {
 		srv.ListenAndServe()
 	}
 
+	return nil
 }
